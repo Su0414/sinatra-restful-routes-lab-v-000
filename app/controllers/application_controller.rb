@@ -40,7 +40,7 @@ class ApplicationController < Sinatra::Base
   patch "/recipes/:id" do
     @recipe = Recipe.update(params[:name], params[:ingredients], params[:cook_time])
     @recipe.save
-    erb :show
+    redirect 'show'
   end
 
   post "/recipes/:id" do
