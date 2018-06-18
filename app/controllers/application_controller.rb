@@ -37,7 +37,7 @@ class ApplicationController < Sinatra::Base
     erb :edit
   end
 
-  patch "/recipes/:id" do
+  patch "/recipes/:id/edit" do
     @recipe = Recipe.update(params[:name], params[:ingredients], params[:cook_time])
     @recipe.save
     erb :show
