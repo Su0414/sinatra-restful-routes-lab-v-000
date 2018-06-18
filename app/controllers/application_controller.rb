@@ -19,11 +19,10 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/recipes" do
-  # create and save in database
     recipe = Recipe.create(:name => params[:name], :ingredients => params[:ingredients], :cook_time => params[:cook_time])
     if recipe.save
       # show page for the recipe
-      redirect "/recipes/#{recipe.id}"
+      redirect "show"
     end
   end
 
