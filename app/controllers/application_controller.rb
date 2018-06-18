@@ -25,19 +25,7 @@ class ApplicationController < Sinatra::Base
       # show page for the recipe
       redirect "/recipes/#{recipe.id}"
 
-
-    recipe = Recipe.new(:name => params[:name], :ingredients => params[:ingredients], :cook_time => params[:cook_time])
-    if recipe.save
-      # show page for the recipe
-      binding.pry
-      recipe_id = recipe.id
-      redirect "/recipes/#{recipe_id}"
-    end
-
-  end
-
   get "/recipes/:id" do
-
     @recipe = Recipe.find_by_id(params[:id])
     erb :show
   end
