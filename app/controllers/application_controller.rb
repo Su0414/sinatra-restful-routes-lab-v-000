@@ -35,7 +35,13 @@ class ApplicationController < Sinatra::Base
       @recipe.delete
   end
 
+  get "/recipes/:id/edit" do
+    erb :edit
+  end
+
   post "/recipes/:id/edit" do
+    @recipe = Recipe.update(params[:name], params[:ingredients], params[:cook_time])
+    @recipe.save
   end
 
 end
