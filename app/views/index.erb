@@ -1,5 +1,6 @@
 <h1>Index Page for Recipies </h1>
 
+<<<<<<< HEAD
 <a href="/recipes/new">Create New Recipe</a>
 
 <% if @recipes != nil
@@ -8,4 +9,9 @@
         Recipe Name : <h3><%= recipe_name %></h3>
         <a href="/recipes/<%= recipe_name.id %>">Show Page</a>
       <% end %>
+=======
+<% @recipies.all.each_with_index(1) do |recipe_name, index| %>
+  <h3><%= recipe_name %></h3>
+  <a href="/recipies/<%= index %>">Show Page</a>
+>>>>>>> 2f7a09ebaed9fb309b9016ccae0ed8b5cb33af2d
 <% end %>
