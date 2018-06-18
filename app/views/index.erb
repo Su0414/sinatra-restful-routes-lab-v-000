@@ -5,7 +5,7 @@
 <%
 # raise @recipes.inspect
 if @recipes != nil
-      @recipes.all.each_with_index(1) do |recipe|
+      @recipes.all.each do |recipe|
         %>
         Recipe Name : <h3><%= recipe.name %></h3></br>
         <a href="/recipes/<%=recipe.id %>">Show Page</a></br>
