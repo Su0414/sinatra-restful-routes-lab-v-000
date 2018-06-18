@@ -24,23 +24,21 @@ class ApplicationController < Sinatra::Base
     if recipe.save
       # show page for the recipe
       redirect "/recipes/#{recipe.id}"
+    end
+  end
 
   get "/recipes/:id" do
     @recipe = Recipe.find_by_id(params[:id])
     erb :show
   end
 
-  delete "/recipes/:id" do
+  delete "/recipes/:id/delete" do
       @recipe = Recipe.find_by_id(params[:id])
       @recipe.delete
+      erb :show
   end
 
   post "/recipes/:id/edit" do
-  end
-
-  delete "/recipes/:id/delete" do
-    @recipe = Recipe.find_by_id(params[:id])
-    erb :show
   end
 
 end
