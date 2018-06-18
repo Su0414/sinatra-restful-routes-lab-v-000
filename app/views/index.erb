@@ -1,7 +1,7 @@
 <h1>Index Page for Recipies </h1>
 <a href="/recipes/new">Create New Recipe</a>
 
-<form action="/recipes/<%=recipe.id %>" method="post">
+
 <% if @recipes != nil
       @recipes.all.each_with_index(1) do |recipe|
         %>
@@ -9,4 +9,3 @@
         <a href="/recipes/<%=recipe.id %>">Show Page</a></br>
       <% end %>
 <% end %>
-</form>
